@@ -1,0 +1,207 @@
+users api is for only admin and user login
+
+## get all users
+GET apis/v1/users
+[user object]
+
+## get users by id
+GET apis/v1/users/:id/by/:ids = [];
+[user object];
+
+## registration 
+POST apis/v1/users
+request: {
+    prefer user model for that
+}
+
+## Update user 
+PUT apis/v1/users:id
+request: {
+    prefer user model for that
+}
+by admin or by user it self
+
+## login user
+PUT apis/v1/users/login
+request: 
+{
+    number: mobile number,
+    password: password
+}
+// update login details
+res: userObject
+
+## remove user
+DELETE apis/v1/users/:id
+request: 
+{
+    in this case please check if there will have atleast one admin if not then throw error that there is no admin other than you
+    number: mobile number,
+    password: password
+}
+res: userObject
+
+###########################################################################################
+
+
+///// user and admin /////
+### customer
+
+## get all customers
+GET apis/v1/customers
+[customers object]
+
+## get customers by id
+GET apis/v1/customers:ids = [];
+[customers object];
+
+
+## get customers by name
+GET apis/v1/customers:ids = [];
+[customers object];
+
+## registration 
+POST apis/v1/customers
+request: {
+    userId: ''
+    prefer customers model for that
+}
+by admin or by user with isUser flag true
+
+## Update customers
+PUT apis/v1/customers/:id
+request: {
+    userId: ''
+    prefer customers model for that
+}
+by admin or by user with isUser flag true
+
+## Update customers
+DELETE apis/v1/customers/:id
+request: {
+    please check if there are some sell/ service is there then please delete them first then this will be delete
+    userId: ''
+    prefer customers model for that
+}
+by admin or by user with isUser flag true
+
+
+############################################################################################
+///// user and admin /////
+### Suppliers
+
+## get all suppliers
+GET apis/v1/suppliers
+[supplier object]
+
+## register
+POST apis/v1/suppliers
+request: {
+    userId: ''
+    [supplier object]
+}
+response: {id: ''}
+
+## Update
+PUT apis/v1/suppliers/:id
+request: {
+    userId: ''
+    [supplier object]
+}
+only admin or users with isUser = true
+
+## DELETE supplier
+
+DELETE apis/v1/suppliers/:id
+request: {
+    please check if this supplier is related to sell/service then throw error
+    userId: ''
+    [supplier object]
+}
+only admin or users with isUser = true
+
+
+############################################################################################
+///// user and admin and engineer /////
+### sell
+
+## get all sells
+GET apis/v1/sells/users/:id
+[supplier object]
+show sells by users and show all sells to the admin
+
+## get all sells related to a customer
+GET apis/v1/sells/users/:id/customer/:id
+[supplier object]
+show sells by users and show all sells to the admin
+
+## register
+POST apis/v1/sells
+request: {
+    userId: ''
+    [supplier object]
+}
+response: {id: ''}
+Only admin and the isUser = true 
+
+## Update
+PUT apis/v1/sells/:id
+request: {
+    userId: ''
+    [supplier object]
+}
+anyone
+
+## DELETE supplier
+
+DELETE apis/v1/sells/:id
+request: {
+    userId: ''
+    [supplier object]
+}
+by admin or user with is User = true
+
+
+############################################################################################
+///// user and admin and engineer /////
+### service
+
+## get all service
+GET apis/v1/services/users/:id
+[supplier object]
+show services by users and show all services to the admin
+
+## get all sells related to a customer
+GET apis/v1/services/users/:id/customer/:id
+[supplier object]
+show services by users and show all services to the admin
+
+
+## register
+POST apis/v1/services
+request: {
+    userId: ''
+    [supplier object]
+}
+response: {id: ''}
+Only admin and the isUser = true 
+
+## Update
+PUT apis/v1/sells/:id
+request: {
+    userId: ''
+    [supplier object]
+}
+anyone
+
+## DELETE supplier
+
+DELETE apis/v1/sells/:id
+request: {
+    userId: ''
+    [supplier object]
+}
+by admin or user with is User = true
+
+
+#AB_ONLINE_NODE_SECRET_KEY rounds - 10 by becrypt
