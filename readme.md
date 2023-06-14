@@ -15,7 +15,7 @@
 2. got to php my admin
 3. create data base by clicking on new data base button
 4. create data base for ansari_db make sure your config match with below or you can change in to config file
-{
+- {
     "username": "root",
     "password": "",
     "database": "ansari_db",
